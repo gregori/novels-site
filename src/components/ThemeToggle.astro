@@ -1,0 +1,20 @@
+---
+---
+
+<button
+  type="button"
+  class="button"
+  id="theme-toggle"
+  data-testid="theme-toggle-button"
+  aria-label="Toggle light and dark theme"
+>
+  <span aria-hidden="true">&#9788;/&#9790;</span>
+  <span class="visually-hidden">Toggle theme</span>
+</button>
+
+<script>
+  import { initThemeToggle } from '../scripts/theme';
+
+  const button = document.getElementById('theme-toggle');
+  if (button) initThemeToggle(button);
+</script>

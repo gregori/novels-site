@@ -1,1 +1,16 @@
 .claude/settings.local.json
+
+# Astro / Node
+node_modules/
+dist/
+.astro/
+npm-debug.log*
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+
+# Env
+.env
+.env.production

@@ -1,0 +1,10 @@
+---
+interface Props {
+  label: string;
+  href: string;
+}
+
+const { label, href } = Astro.props;
+---
+
+<a href={href} class="badge" data-testid="category-badge">{label}</a>

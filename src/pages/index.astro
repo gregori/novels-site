@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ChapterListItem from '../components/ChapterListItem.astro';
+import { getCollection } from 'astro:content';
+import { getRecentChapters, parseChapterId } from '../lib/chapters';
+
+const allChapters = await getCollection('chapters');
+const allTitles = await getCollection('titles');
+const titleById = new Map(allTitles.map((t) => [t.id, t]));
+const recentChapters = getRecentChapters(allChapters, 10);
+---
+
+<BaseLayout title="Home">
+  <h1>Latest Chapters</h1>
+  {
+    recentChapters.length === 0 ? (
+      <p>No chapters published yet.</p>
+    ) : (
+      <ul>
+        {recentChapters.map((chapter) => {
+          const { titleSlug } = parseChapterId(chapter.id);
+          const parentTitle = titleById.get(titleSlug);
+          return (
+            <ChapterListItem
+              chapterTitle={`${parentTitle?.data.title ?? titleSlug} — ${chapter.data.chapterTitle}`}
+              publishDate={chapter.data.publishDate}
+              href={`/titles/${chapter.id}/`}
+            />
+          );
+        })}
+      </ul>
+    )
+  }
+</BaseLayout>

@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TitleCard from '../../components/TitleCard.astro';
+import { getCollection } from 'astro:content';
+import { deriveCategories } from '../../lib/categories';
+
+export async function getStaticPaths() {
+  const titles = await getCollection('titles');
+  const categories = deriveCategories(titles);
+  return categories.map((category) => ({
+    params: { category: category.key },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props;
+---
+
+<BaseLayout title={`Category: ${category.label}`}>
+  <h1>Category: {category.label}</h1>
+  {category.titles.map((title) => <TitleCard title={title} />)}
+</BaseLayout>

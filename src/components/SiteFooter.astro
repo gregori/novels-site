@@ -1,0 +1,35 @@
+---
+---
+
+<footer class="site-footer">
+  <div class="site-container site-footer__row">
+    <p>Fan translations shared for free, non-commercial reading. All original works belong to their respective authors and publishers.</p>
+    <nav aria-label="Footer navigation" class="site-footer__nav">
+      <a href="/rss.xml" data-testid="footer-rss-link">RSS</a>
+      <a href="https://github.com/gregori/novels-site" data-testid="footer-repo-link">Source</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-5);
+    padding-block: var(--space-4);
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+  .site-footer__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--space-2);
+  }
+  .site-footer__nav {
+    display: flex;
+    gap: var(--space-3);
+  }
+  .site-footer__nav a {
+    color: var(--color-text-muted);
+  }
+</style>
