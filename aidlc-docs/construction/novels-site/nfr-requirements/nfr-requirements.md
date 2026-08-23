@@ -20,6 +20,7 @@
 
 ## Maintainability
 - **Testing**: Vitest as the test runner, paired with **fast-check** for property-based tests, satisfying PBT-09 (framework selection) for the properties identified in business-rules.md BR-8.
+- **E2E testing**: added post-launch (not in original scope) after the production CSP was found to silently break client-side interactivity — Astro auto-inlines both small `<style>` and small `<script type="module">` blocks, and the CSP's `default-src 'self'` (no `unsafe-inline`) drops both without any visible error to a casual user. Playwright runs against the real production build (`dist/` served statically, CSP meta tag active — not `astro dev`, which never enforces the policy) so this class of bug is caught automatically. Covers theme toggle persistence, the reading-settings panel, titles-page layout, and comments-widget sizing. Wired into `pr-build-check.yml`.
 - **Type safety**: TypeScript throughout, including Astro's typed Content Collections for front-matter validation (ties directly to BR-5's fail-fast build validation).
 - **Code style**: Prettier for formatting, ESLint for linting (per the user's standing global development conventions).
 

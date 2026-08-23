@@ -26,9 +26,11 @@
 **Pattern** (finalized exact origins during Code Generation once GoatCounter's account subdomain is known):
 - `default-src 'self'`
 - `script-src 'self' https://giscus.app https://gc.zgo.at` (GoatCounter's default script host; adjust if a custom subdomain is used)
+- `style-src 'self' https://giscus.app` (giscus's client.js loads its own `default.css` into the parent document, not just its iframe)
 - `frame-src https://giscus.app` (giscus renders its comment UI in an iframe)
 - `connect-src 'self' https://giscus.app https://gc.zgo.at` (giscus's API calls, GoatCounter's ping)
 - `img-src 'self' data: https://avatars.githubusercontent.com` (giscus renders commenter avatars from GitHub)
-- No `unsafe-inline`/`unsafe-eval` — all site JS ships as bundled files, not inline scripts, per Astro's default output.
+- No `unsafe-inline`/`unsafe-eval`. This requires more than "don't hand-write inline scripts" — Astro's own build optimizations auto-inline small `<style>` blocks (always in dev, and per-component in prod) and small `<script type="module">` blocks the same way, silently, with no error. `astro.config.mjs` must force both off (`build.inlineStylesheets: 'never'`, `vite.build.assetsInlineLimit: 0`) or this CSP silently breaks the site's own styling and interactivity. Learned the hard way post-launch (see Build and Test docs); any future config change touching Vite/Astro's build output must re-verify this against a real production build with the CSP active, not `astro dev` (which never enforces the policy).
+- The one script that must render before first paint (the theme/typography FOUC-prevention bootstrap) can't be a normal Astro-processed script either — it lives at `public/theme-init.js` and is referenced via `<script is:inline src="/theme-init.js">`, which is Astro's documented way to pass an external `public/` asset through untouched (same-origin, satisfies `script-src 'self'`, and stays render-blocking since it has no `type="module"`/`async`/`defer`).
 
 This is a best-effort hygiene measure, not a certified security control (Security Baseline extension remains not enforced per requirements.md).
