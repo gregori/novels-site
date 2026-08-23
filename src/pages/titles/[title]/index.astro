@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ChapterListItem from '../../../components/ChapterListItem.astro';
+import CategoryBadge from '../../../components/CategoryBadge.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { getChaptersForTitle } from '../../../lib/chapters';
+import { normalizeCategory } from '../../../lib/categories';
+
+export async function getStaticPaths() {
+  const titles = await getCollection('titles');
+  return titles.map((title) => ({ params: { title: title.id }, props: { title } }));
+}
+
+const { title } = Astro.props;
+const allChapters = await getCollection('chapters');
+const chapters = getChaptersForTitle(allChapters, title.id);
+---
+
+<BaseLayout title={title.data.title} description={title.data.synopsis}>
+  <article>
+    <Image src={title.data.coverImage} alt={`Cover of ${title.data.title}`} width={240} height={340} />
+    <h1>{title.data.title}</h1>
+    <p class="title-author">{title.data.originalAuthor}</p>
+    <span class="badge">{title.data.status}</span>
+    <div class="title-categories">
+      {
+        title.data.categories.map((category) => (
+          <CategoryBadge
+            label={normalizeCategory(category)}
+            href={`/categories/${normalizeCategory(category)}/`}
+          />
+        ))
+      }
+    </div>
+    <p>{title.data.synopsis}</p>
+    <p class="title-credits">{title.data.credits}</p>
+
+    <h2>Chapters</h2>
+    {
+      chapters.length === 0 ? (
+        <p>No chapters published yet.</p>
+      ) : (
+        <ul>
+          {chapters.map((chapter) => (
+            <ChapterListItem
+              chapterTitle={chapter.data.chapterTitle}
+              publishDate={chapter.data.publishDate}
+              href={`/titles/${chapter.id}/`}
+            />
+          ))}
+        </ul>
+      )
+    }
+  </article>
+</BaseLayout>
+
+<style>
+  .title-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    margin-block: var(--space-2);
+  }
+  .title-credits {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+</style>

@@ -1,0 +1,51 @@
+---
+---
+
+<div class="search-box" role="search">
+  <label for="site-search-input" class="visually-hidden">Search titles or authors</label>
+  <input
+    type="search"
+    id="site-search-input"
+    data-testid="search-input"
+    placeholder="Search titles or authors…"
+  />
+  <ul id="site-search-results" data-testid="search-results-list"></ul>
+</div>
+
+<style>
+  .search-box {
+    position: relative;
+  }
+  #site-search-input {
+    width: 100%;
+    padding: var(--space-1) var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-bg-elevated);
+    color: var(--color-text);
+  }
+  #site-search-results {
+    list-style: none;
+    margin: var(--space-1) 0 0 0;
+    padding: 0;
+  }
+  #site-search-results:empty {
+    display: none;
+  }
+  #site-search-results a {
+    display: block;
+    padding: var(--space-1) var(--space-2);
+    text-decoration: none;
+  }
+  #site-search-results a:hover {
+    background: var(--color-bg-elevated);
+  }
+</style>
+
+<script>
+  import { initSearchWidget } from '../scripts/search-client';
+
+  const input = document.getElementById('site-search-input') as HTMLInputElement | null;
+  const results = document.getElementById('site-search-results');
+  if (input && results) initSearchWidget(input, results);
+</script>

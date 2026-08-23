@@ -1,0 +1,62 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import CategoryBadge from './CategoryBadge.astro';
+import { normalizeCategory } from '../lib/categories';
+
+interface Props {
+  title: CollectionEntry<'titles'>;
+}
+
+const { title } = Astro.props;
+---
+
+<article class="title-card" data-testid="title-card">
+  <a href={`/titles/${title.id}/`} class="title-card__cover-link">
+    <Image src={title.data.coverImage} alt={`Cover of ${title.data.title}`} width={160} height={220} />
+  </a>
+  <div class="title-card__body">
+    <h3>
+      <a href={`/titles/${title.id}/`} data-testid="title-card-link">{title.data.title}</a>
+    </h3>
+    <p class="title-card__author">{title.data.originalAuthor}</p>
+    <span class="badge title-card__status">{title.data.status}</span>
+    <div class="title-card__categories">
+      {
+        title.data.categories.map((category) => (
+          <CategoryBadge label={normalizeCategory(category)} href={`/categories/${normalizeCategory(category)}/`} />
+        ))
+      }
+    </div>
+  </div>
+</article>
+
+<style>
+  .title-card {
+    display: flex;
+    gap: var(--space-3);
+    padding-block: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .title-card__cover-link img {
+    border-radius: var(--radius);
+    display: block;
+  }
+  .title-card__body h3 {
+    margin: 0 0 var(--space-1) 0;
+  }
+  .title-card__body a {
+    text-decoration: none;
+    color: var(--color-text);
+  }
+  .title-card__author {
+    margin: 0 0 var(--space-2) 0;
+    color: var(--color-text-muted);
+  }
+  .title-card__categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    margin-top: var(--space-2);
+  }
+</style>

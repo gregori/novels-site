@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CommentsWidget from '../../../components/CommentsWidget.astro';
+import { getCollection, getEntry, render } from 'astro:content';
+import { getChaptersForTitle, parseChapterId } from '../../../lib/chapters';
+
+export async function getStaticPaths() {
+  const chapters = await getCollection('chapters');
+  return chapters.map((chapter) => {
+    const { titleSlug, chapterSlug } = parseChapterId(chapter.id);
+    return { params: { title: titleSlug, chapter: chapterSlug }, props: { chapter } };
+  });
+}
+
+const { chapter } = Astro.props;
+const { titleSlug } = parseChapterId(chapter.id);
+const title = await getEntry('titles', titleSlug);
+const { Content } = await render(chapter);
+
+const allChapters = await getCollection('chapters');
+const siblingChapters = getChaptersForTitle(allChapters, titleSlug);
+const currentIndex = siblingChapters.findIndex((c) => c.id === chapter.id);
+const prevChapter = currentIndex > 0 ? siblingChapters[currentIndex - 1] : null;
+const nextChapter = currentIndex < siblingChapters.length - 1 ? siblingChapters[currentIndex + 1] : null;
+---
+
+<BaseLayout title={`${title?.data.title ?? titleSlug} — ${chapter.data.chapterTitle}`}>
+  <article class="reading-content">
+    <p><a href={`/titles/${titleSlug}/`}>&larr; {title?.data.title ?? titleSlug}</a></p>
+    <h1>{chapter.data.chapterTitle}</h1>
+    <Content />
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      {prevChapter && (
+        <a href={`/titles/${prevChapter.id}/`} data-testid="chapter-prev-link">
+          &larr; Previous
+        </a>
+      )}
+      {nextChapter && (
+        <a href={`/titles/${nextChapter.id}/`} data-testid="chapter-next-link">
+          Next &rarr;
+        </a>
+      )}
+    </nav>
+  </article>
+  <CommentsWidget />
+</BaseLayout>
+
+<style>
+  .chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--space-4);
+  }
+</style>

@@ -42,15 +42,15 @@
 - [x] Functional Design
 - [x] NFR Requirements
 - [x] NFR Design
-- [ ] Infrastructure Design — IN PROGRESS
-- [ ] Code Generation — EXECUTE
-- [ ] Build and Test — EXECUTE
+- [x] Infrastructure Design
+- [x] Code Generation
+- [x] Build and Test
 
 ### OPERATIONS PHASE
-- [ ] Operations — PLACEHOLDER
+- [x] Operations — PLACEHOLDER (no active stages defined; workflow ends here)
 
 ## Current Status
-- **Lifecycle Phase**: CONSTRUCTION
-- **Current Stage**: Infrastructure Design (unit: novels-site)
-- **Next Stage**: Code Generation (unit: novels-site)
-- **Status**: In progress
+- **Lifecycle Phase**: OPERATIONS
+- **Current Stage**: Operations (PLACEHOLDER) — complete
+- **Next Stage**: None — AI-DLC workflow complete for unit "novels-site"
+- **Status**: Build and Test approved. All CONSTRUCTION-phase stages complete for the single unit. Operations phase has no active stages (placeholder only, per operations.md).

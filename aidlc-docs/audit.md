@@ -264,3 +264,65 @@
 **Context**: Infrastructure Design stage (unit: novels-site) — awaiting approval (GATE)
 
 ---
+
+## Infrastructure Design (novels-site) — Approved
+**Timestamp**: 2026-08-23T01:02:00Z
+**User Input**: "aprovado"
+**AI Response**: "Infrastructure Design approved. Proceeding to Code Generation (unit: novels-site)."
+**Context**: Transition from Infrastructure Design to Code Generation
+
+---
+
+## Code Generation (novels-site) — Plan Presented (Part 1)
+**Timestamp**: 2026-08-23T01:10:00Z
+**User Input**: N/A
+**AI Response**: "Verified live npm registry versions (Astro 7.2.4, TypeScript 7.0.2, Vitest 4.1.11, fast-check 4.9.0, ESLint 10.9.0, Prettier 3.9.6) and confirmed current Astro Content Layer API (src/content.config.ts, glob loader) and official GitHub Pages deployment approach (withastro/action) via Context7 docs. Created novels-site-code-generation-plan.md with 13 numbered steps mapping the two-collection Content Layer design (titles/index.md + chapters/*.md) to Astro's glob loader, covering business logic, tests, layout/styles, shared components, pages, sample content, docs, and deployment artifacts, with story/BR traceability."
+**Context**: Code Generation stage (unit: novels-site), Part 1 Planning — awaiting plan approval (GATE)
+
+---
+
+## Code Generation (novels-site) — Plan Approved
+**Timestamp**: 2026-08-23T01:12:00Z
+**User Input**: "aprovado"
+**AI Response**: "Plan approved. Proceeding to Part 2 Generation, Step 1: Project Structure Setup."
+**Context**: Transition to Code Generation Part 2 Generation
+
+---
+
+## Code Generation (novels-site) — Generation Complete (Part 2)
+**Timestamp**: 2026-08-23T02:00:00Z
+**User Input**: N/A
+**AI Response**: "Executed all 13 steps: project structure (package.json/tsconfig/astro.config.mjs/eslint/prettier), Content Layer (content.config.ts with titles+chapters collections), business logic (categories.ts/chapters.ts/search.ts) with Vitest+fast-check property tests (categories.test.ts/chapters.test.ts/search.test.ts), layout+global styles, 9 shared components, 3 client scripts (theme/typography/search-client) with unit tests, 9 pages including RSS and search-index endpoints, 2 sample titles with 5 chapters total, README.md + deployment-notes.md, GitHub Actions workflows (pr-build-check.yml, deploy.yml) + CNAME + robots.txt. Marked all acceptance criteria in stories.md as [x]. Presenting for approval."
+**Context**: Code Generation stage (unit: novels-site) — awaiting approval (GATE)
+
+---
+
+## Code Generation (novels-site) — Approved
+**Timestamp**: 2026-08-23T13:00:00Z
+**User Input**: "siga para build e test"
+**AI Response**: "Code Generation approved. Proceeding to Build and Test (unit: novels-site)."
+**Context**: Transition from Code Generation to Build and Test
+
+---
+
+## Build and Test (novels-site) Stage
+**Timestamp**: 2026-08-23T13:05:00Z
+**Build Status**: Success — `npm install` then `npm run build` (`astro check && astro build`); 0 type errors, 14 pages built in ~4.4s
+**Test Status**: Pass — `npm test` (`vitest run`): 5 test files, 16 tests, 0 failures
+**Root Cause Fixed**: `package.json` declared `typescript: ^7.0.2`, which does not satisfy `@astrojs/check@0.9.10`'s peer dependency (`^5.0.0 || ^6.0.0`), blocking `npm install` with an ERESOLVE error. Pinned to `typescript: ^6.0.3` (latest version satisfying the peer range) instead of bypassing with `--legacy-peer-deps`.
+**Files Generated**:
+- build-instructions.md
+- unit-test-instructions.md
+- build-and-test-summary.md
+- Integration/performance/contract/security/e2e instruction files: N/A (single-unit static site, no backend, no performance targets, Security/Resiliency baselines opted out — documented with justification in build-and-test-summary.md)
+**Context**: Build and Test stage (unit: novels-site) — awaiting approval (GATE)
+
+---
+
+## Build and Test (novels-site) — Approved
+**Timestamp**: 2026-08-23T13:10:00Z
+**User Input**: "aprovado"
+**AI Response**: "Build and Test approved. Proceeding to Operations phase. Operations is currently a placeholder (per operations.md) with no active stages — all build/test/deploy activity is already handled in CONSTRUCTION. AI-DLC workflow is complete for unit 'novels-site'."
+**Context**: Transition from Build and Test to Operations (PLACEHOLDER) — workflow complete
+
+---
