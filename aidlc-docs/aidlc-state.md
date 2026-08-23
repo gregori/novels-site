@@ -35,14 +35,14 @@
 - [x] Requirements Analysis
 - [x] User Stories
 - [x] Workflow Planning
-- [ ] Application Design — IN PROGRESS
-- [ ] Units Generation — SKIP
+- [x] Application Design
+- [x] Units Generation — SKIPPED
 
 ### CONSTRUCTION PHASE (unit: novels-site)
-- [ ] Functional Design — EXECUTE
-- [ ] NFR Requirements — EXECUTE
-- [ ] NFR Design — EXECUTE
-- [ ] Infrastructure Design — EXECUTE
+- [x] Functional Design
+- [x] NFR Requirements
+- [x] NFR Design
+- [ ] Infrastructure Design — IN PROGRESS
 - [ ] Code Generation — EXECUTE
 - [ ] Build and Test — EXECUTE
 
@@ -50,7 +50,7 @@
 - [ ] Operations — PLACEHOLDER
 
 ## Current Status
-- **Lifecycle Phase**: INCEPTION
-- **Current Stage**: Application Design
-- **Next Stage**: Functional Design (per-unit, CONSTRUCTION)
-- **Status**: Execution plan approved, proceeding
+- **Lifecycle Phase**: CONSTRUCTION
+- **Current Stage**: Infrastructure Design (unit: novels-site)
+- **Next Stage**: Code Generation (unit: novels-site)
+- **Status**: In progress
