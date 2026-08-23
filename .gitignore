@@ -6,6 +6,11 @@ dist/
 .astro/
 npm-debug.log*
 
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+
 # Editor
 .vscode/*
 !.vscode/extensions.json

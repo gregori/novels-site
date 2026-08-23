@@ -29,39 +29,20 @@ const { title, description = 'Fan translations of Japanese webnovels and light n
       !import.meta.env.DEV && (
         <meta
           http-equiv="Content-Security-Policy"
-          content="default-src 'self'; script-src 'self' https://giscus.app https://gc.zgo.at; frame-src https://giscus.app; connect-src 'self' https://giscus.app https://gc.zgo.at; img-src 'self' data: https://avatars.githubusercontent.com"
+          content="default-src 'self'; script-src 'self' https://giscus.app https://gc.zgo.at; style-src 'self' https://giscus.app; frame-src https://giscus.app; connect-src 'self' https://giscus.app https://gc.zgo.at; img-src 'self' data: https://avatars.githubusercontent.com"
         />
       )
     }
     <!--
-      Blocking, non-module script: applies the reader's stored theme/typography
-      preferences before first paint to avoid a flash of the wrong theme.
-      Mirrors the logic in src/scripts/theme.ts and typography.ts, kept minimal
-      and dependency-free since it must run synchronously.
+      Blocking, non-module, same-origin script (public/theme-init.js): applies
+      the reader's stored theme/typography preferences before first paint to
+      avoid a flash of the wrong theme. Must be an external file rather than
+      is:inline — the CSP's script-src has no unsafe-inline/hash, so an inline
+      <script> here would be silently blocked in production. A plain <script
+      src="..."> with no type="module"/async/defer stays render-blocking, so
+      it still runs before first paint like the inline version did.
     -->
-    <script is:inline>
-      (function () {
-        try {
-          const stored = localStorage.getItem('theme');
-          const theme =
-            stored === 'light' || stored === 'dark'
-              ? stored
-              : window.matchMedia('(prefers-color-scheme: dark)').matches
-                ? 'dark'
-                : 'light';
-          document.documentElement.dataset.theme = theme;
-
-          const font = localStorage.getItem('fontFamily');
-          if (font) document.documentElement.dataset.font = font;
-          const size = localStorage.getItem('fontSize');
-          if (size) document.documentElement.dataset.fontSize = size;
-          const spacing = localStorage.getItem('lineSpacing');
-          if (spacing) document.documentElement.dataset.lineSpacing = spacing;
-        } catch {
-          /* localStorage unavailable (e.g. private mode) — CSS defaults apply */
-        }
-      })();
-    </script>
+    <script is:inline src="/theme-init.js"></script>
   </head>
   <body>
     <SiteHeader />
