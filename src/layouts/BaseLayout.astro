@@ -19,10 +19,20 @@ const { title, description = 'Fan translations of Japanese webnovels and light n
     <title>{title} | Forgotten Translations</title>
     <meta name="description" content={description} />
     <link rel="alternate" type="application/rss+xml" title="Forgotten Translations" href="/rss.xml" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' https://giscus.app https://gc.zgo.at; frame-src https://giscus.app; connect-src 'self' https://giscus.app https://gc.zgo.at; img-src 'self' data: https://avatars.githubusercontent.com"
-    />
+    {
+      /*
+        astro dev's HMR client relies on inline styles/scripts that this CSP
+        would block, so the policy only ships in the production build.
+      */
+    }
+    {
+      !import.meta.env.DEV && (
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' https://giscus.app https://gc.zgo.at; frame-src https://giscus.app; connect-src 'self' https://giscus.app https://gc.zgo.at; img-src 'self' data: https://avatars.githubusercontent.com"
+        />
+      )
+    }
     <!--
       Blocking, non-module script: applies the reader's stored theme/typography
       preferences before first paint to avoid a flash of the wrong theme.
@@ -32,8 +42,8 @@ const { title, description = 'Fan translations of Japanese webnovels and light n
     <script is:inline>
       (function () {
         try {
-          var stored = localStorage.getItem('theme');
-          var theme =
+          const stored = localStorage.getItem('theme');
+          const theme =
             stored === 'light' || stored === 'dark'
               ? stored
               : window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -41,13 +51,13 @@ const { title, description = 'Fan translations of Japanese webnovels and light n
                 : 'light';
           document.documentElement.dataset.theme = theme;
 
-          var font = localStorage.getItem('fontFamily');
+          const font = localStorage.getItem('fontFamily');
           if (font) document.documentElement.dataset.font = font;
-          var size = localStorage.getItem('fontSize');
+          const size = localStorage.getItem('fontSize');
           if (size) document.documentElement.dataset.fontSize = size;
-          var spacing = localStorage.getItem('lineSpacing');
+          const spacing = localStorage.getItem('lineSpacing');
           if (spacing) document.documentElement.dataset.lineSpacing = spacing;
-        } catch (e) {
+        } catch {
           /* localStorage unavailable (e.g. private mode) — CSS defaults apply */
         }
       })();
