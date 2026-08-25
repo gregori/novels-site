@@ -27,6 +27,7 @@ const nextChapter = currentIndex < siblingChapters.length - 1 ? siblingChapters[
 <BaseLayout title={`${title?.data.title ?? titleSlug} — ${chapter.data.chapterTitle}`}>
   <article class="reading-content">
     <p><a href={`/titles/${titleSlug}/`}>&larr; {title?.data.title ?? titleSlug}</a></p>
+    {chapter.data.volume && <p class="chapter-volume">Volume {chapter.data.volume}</p>}
     <h1>{chapter.data.chapterTitle}</h1>
     <Content />
     <nav class="chapter-nav" aria-label="Chapter navigation">
@@ -46,6 +47,13 @@ const nextChapter = currentIndex < siblingChapters.length - 1 ? siblingChapters[
 </BaseLayout>
 
 <style>
+  .chapter-volume {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-1);
+  }
   .chapter-nav {
     display: flex;
     justify-content: space-between;

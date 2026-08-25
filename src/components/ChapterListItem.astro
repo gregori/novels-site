@@ -3,14 +3,18 @@ interface Props {
   chapterTitle: string;
   publishDate: Date;
   href: string;
+  volume?: number;
 }
 
-const { chapterTitle, publishDate, href } = Astro.props;
+const { chapterTitle, publishDate, href, volume } = Astro.props;
 const formattedDate = publishDate.toISOString().slice(0, 10);
 ---
 
 <li class="chapter-list-item">
-  <a href={href} data-testid="chapter-link">{chapterTitle}</a>
+  <a href={href} data-testid="chapter-link">
+    {volume && <span class="chapter-list-item__volume">Volume {volume}</span>}
+    {chapterTitle}
+  </a>
   <time datetime={publishDate.toISOString()} class="chapter-list-item__date">{formattedDate}</time>
 </li>
 
@@ -25,6 +29,11 @@ const formattedDate = publishDate.toISOString().slice(0, 10);
   .chapter-list-item a {
     text-decoration: none;
     color: var(--color-text);
+  }
+  .chapter-list-item__volume {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    margin-right: var(--space-1);
   }
   .chapter-list-item__date {
     color: var(--color-text-muted);

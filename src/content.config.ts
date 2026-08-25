@@ -33,6 +33,7 @@ const chapters = defineCollection({
   schema: z.object({
     chapterTitle: z.string().min(1),
     publishDate: z.coerce.date(),
+    volume: z.number().int().min(1).optional(),
   }),
 });
 

@@ -47,6 +47,7 @@ const chapters = getChaptersForTitle(allChapters, title.id);
               chapterTitle={chapter.data.chapterTitle}
               publishDate={chapter.data.publishDate}
               href={`/titles/${chapter.id}/`}
+              volume={chapter.data.volume}
             />
           ))}
         </ul>
