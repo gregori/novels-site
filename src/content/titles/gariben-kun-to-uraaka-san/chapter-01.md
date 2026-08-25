@@ -1,6 +1,7 @@
 ---
-chapterTitle: 'Rika''s Secret Account – Part 1'
+chapterTitle: "Chapter 01: Rika's Secret Account – Part 1"
 publishDate: 2026-02-08
+volume: 1
 ---
 
 **T/N: Translating this WN from chapter 1, as the previously translated chapters seem to have been deleted. As a side note, I will keep the names in Japanese order (surname first name), I'll keep the honorifics and most family vocatives, when I think it makes sense to use.**
@@ -97,7 +98,7 @@ Tsutomu had never commented on her photos himself. In fact, he felt like he shou
 
 It was fine for him to just watch from afar. He was aware he was a coward.
 
-*Thank you again today, 'RIKA'.*
+_Thank you again today, 'RIKA'._
 
 It's been about a year since starting high school and living alone.
 
@@ -112,7 +113,7 @@ The fatigue that had weighed on his entire body vanished in an instant.
 Tsutomu had touched upon a simple truth.  
 Erotica saves people.
 
-*I shouldn’t be wondering what kind of person she is.*
+_I shouldn’t be wondering what kind of person she is._
 
 He lightly tapped the hidden face with his finger. 'RIKA' never showed her face.  
 Her followers – well into the five digits – were surely all dying to see it.
@@ -125,7 +126,7 @@ He’d been startled the first time a half-naked woman's photo appeared on his t
 A half-naked woman wasn’t shocking in itself. He'd always thought that.  
 After all, these days, you can flip through any weekly magazine and find photos of gravure idols and cosplayers.
 
-*Well… it’s not like I’ve ever seen a real woman’s bare skin up close.*
+_Well… it’s not like I’ve ever seen a real woman’s bare skin up close._
 
 But—the image posted on SNS felt different.  
 It wasn't just about how revealing it was – there was something …raw about it.  
@@ -136,7 +137,7 @@ He'd browsed Twitter often enough since getting his smartphone, but he’d never
 
 After stumbling onto one and getting curious, he’d dug deeper.
 
-*When something catches my interest, I just can’t leave it alone.*
+_When something catches my interest, I just can’t leave it alone._
 
 It’s all just secondhand information from the internet, of course… but apparently, people who flood their secret accounts with erotic photos tend to be either plagued by loneliness or driven by a strong need for validation.
 
@@ -144,13 +145,13 @@ They post a slightly naughty picture on a whim, get attention, feel the rush fro
 
 It seems to escalate into thoughts like this: 'I hate being alone,' 'I want everyone to praise me,' 'I want to be acknowledged.' And the images themselves start escalating too.
 
-*…I don't really get it.*
+_…I don't really get it._
 
 Take this girl behind the account ‘RIKA’, for instance. No one knows who she actually is.  
 Unknown, yes... but it's obvious she has a body captivating enough to recognize even without seeing her face.  
 If she can attract this much attention without showing it, you'd think she'd be the last person struggling with loneliness or craving approval in real life.
 
-*...Kind of rich coming from a bona fide loner like me.*
+_...Kind of rich coming from a bona fide loner like me._
 
 He couldn't help but laugh at himself. Tsutomu was a loner – something both he and everyone else acknowledged.  
 He handled the housework, went to school, worked part-time, and studied hard.
@@ -159,7 +160,7 @@ Living like that, his relationships had thinned out before he even realized it.
 That was all there was to it. He'd drifted apart from his friends from middle school as well.  
 If he ever lost the few friends he'd made in high school, his student life would become completely solitary.　
 
-*If I were a cute girl..., would I run a secret account too?*
+_If I were a cute girl..., would I run a secret account too?_
 
 He found himself saying the absurd thought aloud in his empty room.  
 Maybe he would. The desire to connect with someone – to feel needed – existed in him as well.
@@ -167,7 +168,7 @@ Maybe he would. The desire to connect with someone – to feel needed – existe
 His acceptance of living alone was nothing more than a trade-off with the various problems reality had thrown at him.  
 For all the freedom of his solitary life, there was no denying he, too, sought those fragile connections offered by SNS.
 
-*Not that anyone would want to see me naked anyway.*
+_Not that anyone would want to see me naked anyway._
 
 Tsutomu was a guy. Not particularly handsome. Just an ordinary glasses-wearing boy with short hair and an average build.  
 Years of burying himself in his studies had probably ruined his eyesight, and he was self-conscious about how sharp his eyes looked.  

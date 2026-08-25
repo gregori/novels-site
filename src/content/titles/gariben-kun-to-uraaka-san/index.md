@@ -5,6 +5,9 @@ categories:
   - Romance
   - Comedy
   - School Life
+  - Male Protagonist
+  - School Idol
+  - Loner Protagonist
 status: 'ongoing'
 synopsis: 'Kariya Tsutomu is a studious high schooler whose only hobby is quietly following erotic "secret accounts" on social media. But when he happens to help the class idol, Rika, he realizes the anonymous girl he has been relying on late at night... just might be her.'
 coverImage: './cover.jpg'

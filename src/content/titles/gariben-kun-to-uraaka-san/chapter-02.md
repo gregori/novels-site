@@ -1,6 +1,7 @@
 ---
-chapterTitle: 'Rika''s Secret Account – Part 2'
+chapterTitle: "Chapter 02: Rika's Secret Account – Part 2"
 publishDate: 2026-02-16
+volume: 1
 ---
 
 **TN - Sorry for the delay. Dealing with IRL Stuff. Since we're havind one extra day off here, I'll t try to post at least one more chapter untill timorrow.**
@@ -9,23 +10,23 @@ publishDate: 2026-02-16
 
 "Nii-san, are you listening?"
 
-The ringtone sliced through the midnight silence. The call that followed showed no sign of ending, dragging for nearly an hour. Even a voice as clear as mountain spring water starts to grate after a while. Having finished his chores and wrapped up his preparations, Tsutomu had to muster extraordinary effort to keep himself from voicing his true thoughts: '*I wish this would end already*.'
+The ringtone sliced through the midnight silence. The call that followed showed no sign of ending, dragging for nearly an hour. Even a voice as clear as mountain spring water starts to grate after a while. Having finished his chores and wrapped up his preparations, Tsutomu had to muster extraordinary effort to keep himself from voicing his true thoughts: '_I wish this would end already_.'
 
 "I'm listening."
 
-**“Seriously... not just spring break, but you won't be coming home for Golden Week either? Dad and Mom miss you."**
+“Seriously... not just spring break, but you won't be coming home for Golden Week either? Dad and Mom miss you."
 
 "I know I should feel bad. But I'm busy – what can I do?"
 
-**"You always say that. If living alone keeps you that busy, wouldn't it be better to commute from home?"**
+"You always say that. If living alone keeps you that busy, wouldn't it be better to commute from home?"
 
 "Give me a break. It takes two hours each way."
 
-**"But..."**
+"But..."
 
 "Anyway, I'll come home at least once during summer break. Tell them that for me."
 
-He hung up after saying that. Pressing a hand to his damp forehead, he let out a sigh. Messages flooded his smartphone display: *'Absolutely',* *'I feel like I heard the same thing before spring break',* *'I'll come by to check on you'.*
+He hung up after saying that. Pressing a hand to his damp forehead, he let out a sigh. Messages flooded his smartphone display: _'Absolutely',_ _'I feel like I heard the same thing before spring break',_ _'I'll come by to check on you'._
 
 The sender was Tsutomu's stepsister – a new addition to the family, one year younger than him, brought into his life by his parents' remarriage. Even setting aside any family bias, she was undeniably a beautiful girl, the kind of situation others might easily envy.
 
@@ -77,7 +78,7 @@ She wasn't wearing a bra. She was braless. The fabric pulled upward distorted th
 
 Incidentally, while it seemed like she wasn't wearing anything on her lower half... she was actually wearing regular shorts. The design was different from the ones I saw the other day.
 
-While I thought underwear would have been better, I also sensed RIKA's strong will: *'This photo wants to show off the upper body!'* Tsutomu, with a deadpan expression, thinks trivial things like *'Erotica is tough.'.* Even if you're good at schoolwork, the world is full of things you just don't understand.
+While I thought underwear would have been better, I also sensed RIKA's strong will: _'This photo wants to show off the upper body!'_ Tsutomu, with a deadpan expression, thinks trivial things like _'Erotica is tough.'._ Even if you're good at schoolwork, the world is full of things you just don't understand.
 
 ・
 
@@ -89,7 +90,7 @@ While I thought underwear would have been better, I also sensed RIKA's strong wi
 
 Was his brain turning to mush? He felt like he muttered the same thing every time. After quietly appreciating the post by himself, he scrolled through his timeline... and his finger froze.
 
-*'Calling for Costume Submissions'*
+_'Calling for Costume Submissions'_
 
 A new comment from 'RIKA' had appeared.
 
@@ -121,7 +122,7 @@ While Tsutomu wrestled with his thoughts alone, more and more requests kept pour
 
 Reading the replies made an inexplicable restlessness stir inside him.
 
-— A request... should be okay, right?
+_— A request... should be okay, right?_
 
 If she noticed his message, he’d be happy. If she didn’t, he’d feel disappointed.
 
@@ -147,7 +148,7 @@ He placed a hand over his chest to steady his breathing and typed each character
 
 More seriously than he had ever checked a school exam – reading it again and again, making sure it was exactly right.
 
-*'Bunny Girl, please.'*
+_'Bunny Girl, please.'_
 
 "Phew."
 
