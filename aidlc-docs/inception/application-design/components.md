@@ -7,6 +7,7 @@
 **Purpose**: Source of truth for all site content — Markdown files with front matter, organized one folder per title, one file per chapter.
 
 **Responsibilities**:
+
 - Define the front-matter schema for titles (title, original author, categories/tags, status, synopsis, cover image, credits/disclaimer)
 - Define the front-matter schema for chapters (chapter number, chapter title, publish date)
 - Provide the folder/file naming convention translators follow to publish
@@ -19,6 +20,7 @@
 **Purpose**: Transform Content Layer records into the site's static pages.
 
 **Responsibilities**:
+
 - Render Home (recent chapters), Catalog (all titles), Category Index, Category page, Title page, Chapter page, About page
 - Apply the calm, mobile-first visual design
 - Generate routing/URLs for all pages
@@ -30,6 +32,7 @@
 **Purpose**: Client-side behavior that lets readers customize their reading experience.
 
 **Responsibilities**:
+
 - Theme toggle (light/dark), defaulting to OS/browser preference when no stored preference exists
 - Font family, font size, and line/paragraph spacing controls
 - Persist all preferences in `localStorage`
@@ -42,6 +45,7 @@
 **Purpose**: Client-side search across titles and authors.
 
 **Responsibilities**:
+
 - Build a search index artifact from Content Layer metadata at build time
 - Provide the search input UI and render matching results client-side (no backend calls)
 
@@ -52,6 +56,7 @@
 **Purpose**: Reader engagement and update notification.
 
 **Responsibilities**:
+
 - Embed a giscus (GitHub Discussions-backed) comments widget on each chapter page
 - Generate an RSS feed listing newly published chapters
 
@@ -62,6 +67,7 @@
 **Purpose**: Continuous delivery of the site to GitHub Pages.
 
 **Responsibilities**:
+
 - On push to the main branch: install dependencies, run the Site Generator build (including Search index and RSS generation), and deploy the static output to GitHub Pages
 - Serve the site under the custom domain `forgottentranslations.online`
 

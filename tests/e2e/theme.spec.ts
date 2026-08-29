@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-test('theme toggle switches the page between light and dark and persists across reload', async ({ page }) => {
+test('theme toggle switches the page between light and dark and persists across reload', async ({
+  page,
+}) => {
   await page.goto('/');
 
   const html = page.locator('html');

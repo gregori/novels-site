@@ -7,6 +7,7 @@
 **Responsibility**: Orchestrates the full static build from source content to deployable output.
 
 **Orchestration steps**:
+
 1. Content Layer parses and validates all title/chapter front matter
 2. Site Generator / Templating renders all pages using the parsed content
 3. Search builds the search index from the same parsed content
@@ -20,6 +21,7 @@
 **Responsibility**: Publishes the Site Build Service's output to GitHub Pages.
 
 **Orchestration steps**:
+
 1. Take the static output directory produced by the Site Build Service
 2. Include the `CNAME` file for the custom domain `forgottentranslations.online`
 3. Publish to the GitHub Pages hosting branch/environment via GitHub Actions

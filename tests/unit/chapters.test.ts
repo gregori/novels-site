@@ -27,15 +27,18 @@ describe('getRecentChapters', () => {
     (chapters, limit) => {
       const result = getRecentChapters(chapters, limit);
       expect(result.length).toBeLessThanOrEqual(Math.min(limit, chapters.length));
-    }
+    },
   );
 
   // PBT-03: invariant — element preservation, output is a subset of input
-  test.prop([fc.array(chapterArb, { maxLength: 30 })])('only returns chapters present in the input', (chapters) => {
-    const inputIds = new Set(chapters.map((c) => c.id));
-    const result = getRecentChapters(chapters, 10);
-    expect(result.every((c) => inputIds.has(c.id))).toBe(true);
-  });
+  test.prop([fc.array(chapterArb, { maxLength: 30 })])(
+    'only returns chapters present in the input',
+    (chapters) => {
+      const inputIds = new Set(chapters.map((c) => c.id));
+      const result = getRecentChapters(chapters, 10);
+      expect(result.every((c) => inputIds.has(c.id))).toBe(true);
+    },
+  );
 
   // PBT-03: invariant — result is sorted by publishDate descending
   test.prop([fc.array(chapterArb, { minLength: 1, maxLength: 30 })])(
@@ -44,10 +47,10 @@ describe('getRecentChapters', () => {
       const result = getRecentChapters(chapters, chapters.length);
       for (let i = 0; i < result.length - 1; i++) {
         expect(result[i].data.publishDate.getTime()).toBeGreaterThanOrEqual(
-          result[i + 1].data.publishDate.getTime()
+          result[i + 1].data.publishDate.getTime(),
         );
       }
-    }
+    },
   );
 });
 
@@ -57,7 +60,7 @@ describe('getChaptersForTitle', () => {
     (chapters, titleSlug) => {
       const result = getChaptersForTitle(chapters, titleSlug);
       expect(result.every((c) => parseChapterId(c.id).titleSlug === titleSlug)).toBe(true);
-    }
+    },
   );
 
   it('sorts a title chapters ascending by filename (BR-3)', () => {
@@ -68,6 +71,9 @@ describe('getChaptersForTitle', () => {
     ];
 
     const result = getChaptersForTitle(chapters, 'solo-leveling');
-    expect(result.map((c) => c.id)).toEqual(['solo-leveling/chapter-01', 'solo-leveling/chapter-02']);
+    expect(result.map((c) => c.id)).toEqual([
+      'solo-leveling/chapter-01',
+      'solo-leveling/chapter-02',
+    ]);
   });
 });

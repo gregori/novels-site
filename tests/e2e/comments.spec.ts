@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-test('comments widget spans the reading column width, not a cramped default iframe box', async ({ page }) => {
+test('comments widget spans the reading column width, not a cramped default iframe box', async ({
+  page,
+}) => {
   await page.goto('/titles/gariben-kun-to-uraaka-san/chapter-01/');
 
   const widget = page.getByTestId('comments-widget');

@@ -14,7 +14,8 @@ const categories = deriveCategories(titles);
     {
       categories.map((category) => (
         <li>
-          <CategoryBadge label={category.label} href={`/categories/${category.key}/`} /> ({category.titles.length})
+          <CategoryBadge label={category.label} href={`/categories/${category.key}/`} /> (
+          {category.titles.length})
         </li>
       ))
     }

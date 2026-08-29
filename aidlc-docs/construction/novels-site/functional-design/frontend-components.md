@@ -4,15 +4,15 @@ Per Functional Design plan Q8/A: page-level components plus a short list of shar
 
 ## Pages
 
-| Page | Route (indicative) | Renders |
-|---|---|---|
-| Home | `/` | `RecentChaptersList` (Process 3 output) |
-| Catalog | `/titles/` | `TitleCard` grid for all Titles |
-| Category Index | `/categories/` | `CategoryBadge` list for all Categories |
-| Category | `/categories/{key}/` | `TitleCard` grid filtered to one Category |
-| Title | `/titles/{titleSlug}/` | Title header (synopsis, cover, status, credits, categories) + `ChapterList` |
-| Chapter | `/titles/{titleSlug}/{chapterSlug}/` | Rendered chapter Markdown + `ReadingControls` + `CommentsWidget` |
-| About | `/about/` | Static translator/disclaimer content |
+| Page           | Route (indicative)                   | Renders                                                                     |
+| -------------- | ------------------------------------ | --------------------------------------------------------------------------- |
+| Home           | `/`                                  | `RecentChaptersList` (Process 3 output)                                     |
+| Catalog        | `/titles/`                           | `TitleCard` grid for all Titles                                             |
+| Category Index | `/categories/`                       | `CategoryBadge` list for all Categories                                     |
+| Category       | `/categories/{key}/`                 | `TitleCard` grid filtered to one Category                                   |
+| Title          | `/titles/{titleSlug}/`               | Title header (synopsis, cover, status, credits, categories) + `ChapterList` |
+| Chapter        | `/titles/{titleSlug}/{chapterSlug}/` | Rendered chapter Markdown + `ReadingControls` + `CommentsWidget`            |
+| About          | `/about/`                            | Static translator/disclaimer content                                        |
 
 ## Shared UI Pieces
 
@@ -35,7 +35,9 @@ Per Functional Design plan Q8/A: page-level components plus a short list of shar
 - **Read next chapter**: reader on a Chapter page uses a "next/previous chapter" affordance within `ChapterList`/chapter navigation (ordering per BR-3) to move through a Title sequentially
 
 ## Form Validation
+
 There are no data-submission forms in this site (no accounts, no login, no comment form of our own — comments are handled entirely by the third-party giscus embed). `SearchBox` has no "validation" beyond BR-6's empty-query rule (no results shown for an empty query).
 
 ## API Integration Points
+
 None — this is a fully static site. The only network calls a reader's browser makes beyond loading the static assets are to the third-party giscus/GitHub Discussions embed on Chapter pages.

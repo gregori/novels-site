@@ -8,7 +8,8 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Fan translations of Japanese webnovels and light novels.' } = Astro.props;
+const { title, description = 'Fan translations of Japanese webnovels and light novels.' } =
+  Astro.props;
 ---
 
 <!doctype html>
@@ -18,7 +19,12 @@ const { title, description = 'Fan translations of Japanese webnovels and light n
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title} | Forgotten Translations</title>
     <meta name="description" content={description} />
-    <link rel="alternate" type="application/rss+xml" title="Forgotten Translations" href="/rss.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Forgotten Translations"
+      href="/rss.xml"
+    />
     {
       /*
         astro dev's HMR client relies on inline styles/scripts that this CSP
