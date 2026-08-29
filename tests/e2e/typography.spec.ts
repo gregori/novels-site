@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('reading settings panel changes the chapter text size and font family', async ({ page }) => {
-  await page.goto('/titles/quiet-hours/chapter-01/');
+  await page.goto('/titles/gariben-kun-to-uraaka-san/chapter-01/');
 
   const reading = page.locator('.reading-content');
   const initialSize = await reading.evaluate((el) => getComputedStyle(el).fontSize);

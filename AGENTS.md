@@ -5,13 +5,15 @@ When the user invokes AI-DLC, read and follow
 
 These rules apply to all translated chapter content under `src/content/titles/`.
 
+Translations are made from Japanese to English, unless stated otherwise.
+
 ### Chapter front matter
 
 Every chapter file needs this front matter:
 
 ```md
 ---
-chapterTitle: "Chapter NN: <Title>"
+chapterTitle: 'Chapter NN: <Title>'
 publishDate: YYYY-MM-DD
 volume: N
 ---
@@ -24,7 +26,7 @@ volume: N
 ### Typography
 
 - **Dialogue** (spoken lines in quotation marks) — plain text, **no bold**.
-- **Internal monologue / thoughts** (typically lines starting with an em dash `—`) — *italic* (`_..._`). Use underscores, not asterisks.
+- **Internal monologue / thoughts** (typically lines starting with an em dash `—`) — _italic_ (`_..._`). Use underscores, not asterisks.
 - **Character reveal card** (a standalone name like `'Tachibana Matsurika'`) — **bold** (`**...**`), on its own paragraph.
 - **Emphasis** — use bold only for rare, intentional emphasis (e.g. a shouted line in a phone call), never for regular dialogue.
 - Translator's notes (`T/N`, `TN`) keep their existing **bold** marker.
@@ -38,4 +40,3 @@ volume: N
 ### Status in `index.md`
 
 - The title's `status` field reflects translation progress (`ongoing`, `completed`, `paused`, `dropped`), not the source work's own status.
-
