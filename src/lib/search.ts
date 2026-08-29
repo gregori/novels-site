@@ -25,6 +25,6 @@ export function searchTitles(query: string, index: SearchIndexEntry[]): SearchIn
   return index.filter(
     (entry) =>
       entry.title.toLowerCase().includes(trimmed) ||
-      entry.originalAuthor.toLowerCase().includes(trimmed)
+      entry.originalAuthor.toLowerCase().includes(trimmed),
   );
 }

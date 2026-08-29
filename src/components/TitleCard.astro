@@ -13,7 +13,12 @@ const { title } = Astro.props;
 
 <article class="title-card" data-testid="title-card">
   <a href={`/titles/${title.id}/`} class="title-card__cover-link">
-    <Image src={title.data.coverImage} alt={`Cover of ${title.data.title}`} width={160} height={220} />
+    <Image
+      src={title.data.coverImage}
+      alt={`Cover of ${title.data.title}`}
+      width={160}
+      height={220}
+    />
   </a>
   <div class="title-card__body">
     <h3>
@@ -24,7 +29,10 @@ const { title } = Astro.props;
     <div class="title-card__categories">
       {
         title.data.categories.map((category) => (
-          <CategoryBadge label={normalizeCategory(category)} href={`/categories/${normalizeCategory(category)}/`} />
+          <CategoryBadge
+            label={normalizeCategory(category)}
+            href={`/categories/${normalizeCategory(category)}/`}
+          />
         ))
       }
     </div>

@@ -21,7 +21,8 @@ const allChapters = await getCollection('chapters');
 const siblingChapters = getChaptersForTitle(allChapters, titleSlug);
 const currentIndex = siblingChapters.findIndex((c) => c.id === chapter.id);
 const prevChapter = currentIndex > 0 ? siblingChapters[currentIndex - 1] : null;
-const nextChapter = currentIndex < siblingChapters.length - 1 ? siblingChapters[currentIndex + 1] : null;
+const nextChapter =
+  currentIndex < siblingChapters.length - 1 ? siblingChapters[currentIndex + 1] : null;
 ---
 
 <BaseLayout title={`${title?.data.title ?? titleSlug} — ${chapter.data.chapterTitle}`}>
@@ -31,16 +32,20 @@ const nextChapter = currentIndex < siblingChapters.length - 1 ? siblingChapters[
     <h1>{chapter.data.chapterTitle}</h1>
     <Content />
     <nav class="chapter-nav" aria-label="Chapter navigation">
-      {prevChapter && (
-        <a href={`/titles/${prevChapter.id}/`} data-testid="chapter-prev-link">
-          &larr; Previous
-        </a>
-      )}
-      {nextChapter && (
-        <a href={`/titles/${nextChapter.id}/`} data-testid="chapter-next-link">
-          Next &rarr;
-        </a>
-      )}
+      {
+        prevChapter && (
+          <a href={`/titles/${prevChapter.id}/`} data-testid="chapter-prev-link">
+            &larr; Previous
+          </a>
+        )
+      }
+      {
+        nextChapter && (
+          <a href={`/titles/${nextChapter.id}/`} data-testid="chapter-next-link">
+            Next &rarr;
+          </a>
+        )
+      }
     </nav>
   </article>
   <CommentsWidget />

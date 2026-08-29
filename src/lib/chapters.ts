@@ -18,10 +18,15 @@ export function parseChapterId(id: string): ParsedChapterId {
  * chapter filename (chapterSlug). Zero-padded numbers in filenames (chapter-01,
  * chapter-02, ...) keep lexicographic order equal to numeric order.
  */
-export function getChaptersForTitle<T extends ChapterLike>(allChapters: T[], titleSlug: string): T[] {
+export function getChaptersForTitle<T extends ChapterLike>(
+  allChapters: T[],
+  titleSlug: string,
+): T[] {
   return allChapters
     .filter((chapter) => parseChapterId(chapter.id).titleSlug === titleSlug)
-    .sort((a, b) => parseChapterId(a.id).chapterSlug.localeCompare(parseChapterId(b.id).chapterSlug));
+    .sort((a, b) =>
+      parseChapterId(a.id).chapterSlug.localeCompare(parseChapterId(b.id).chapterSlug),
+    );
 }
 
 /**
