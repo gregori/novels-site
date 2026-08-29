@@ -12,7 +12,9 @@ const indexEntryArb: fc.Arbitrary<SearchIndexEntry> = fc.record({
 
 describe('searchTitles', () => {
   it('returns no results for an empty or whitespace-only query (BR-6)', () => {
-    const index: SearchIndexEntry[] = [{ slug: 'a', title: 'Solo Leveling', originalAuthor: 'Chugong' }];
+    const index: SearchIndexEntry[] = [
+      { slug: 'a', title: 'Solo Leveling', originalAuthor: 'Chugong' },
+    ];
     expect(searchTitles('', index)).toEqual([]);
     expect(searchTitles('   ', index)).toEqual([]);
   });
@@ -24,7 +26,7 @@ describe('searchTitles', () => {
       const lower = searchTitles(query.toLowerCase(), index);
       const upper = searchTitles(query.toUpperCase(), index);
       expect(new Set(upper.map((e) => e.slug))).toEqual(new Set(lower.map((e) => e.slug)));
-    }
+    },
   );
 
   // PBT-03: invariant — the result set exactly matches the case-insensitive substring definition
@@ -36,12 +38,13 @@ describe('searchTitles', () => {
 
       const expected = index.filter(
         (entry) =>
-          entry.title.toLowerCase().includes(trimmed) || entry.originalAuthor.toLowerCase().includes(trimmed)
+          entry.title.toLowerCase().includes(trimmed) ||
+          entry.originalAuthor.toLowerCase().includes(trimmed),
       );
 
       expect(new Set(searchTitles(query, index).map((e) => e.slug))).toEqual(
-        new Set(expected.map((e) => e.slug))
+        new Set(expected.map((e) => e.slug)),
       );
-    }
+    },
   );
 });
