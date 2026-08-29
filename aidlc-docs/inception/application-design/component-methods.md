@@ -16,6 +16,7 @@
   Checks required fields are present and well-formed; used to fail the build clearly on bad content.
 
 **Key types** (conceptual, refined in Functional Design):
+
 - `TitleMetadata`: slug, title, originalAuthor, categories[], status, synopsis, coverImage, credits
 - `ChapterMetadata`: titleSlug, chapterNumber, chapterTitle, publishDate
 

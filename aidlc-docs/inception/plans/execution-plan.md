@@ -3,9 +3,11 @@
 ## Detailed Analysis Summary
 
 ### Transformation Scope
+
 - **Project Type**: Greenfield — not applicable (no existing system to transform)
 
 ### Change Impact Assessment
+
 - **User-facing changes**: Yes — entire site is new user-facing product (Reader browsing/reading/customizing; Translator publishing workflow)
 - **Structural changes**: Yes — new static site architecture (content layer, site generator, reading UI, search, comments, RSS, CI/CD)
 - **Data model changes**: Yes — new front-matter schema for titles and chapters (categories, status, synopsis, cover, credits)
@@ -13,6 +15,7 @@
 - **NFR impact**: Yes — performance (static/lightweight JS), accessibility (typography controls, mobile-first), deployment (GitHub Actions + GitHub Pages + custom domain)
 
 ### Component Relationships
+
 - **Content Layer**: Markdown files + front matter (titles, chapters) — source of truth
 - **Site Generator/Build**: Static site generator (framework TBD in NFR Requirements) consumes Content Layer, produces static HTML/CSS/JS
 - **Reading UI**: Templates/components for home, catalog, category, title, chapter, about pages; theme/typography controls
@@ -21,6 +24,7 @@
 - **CI/CD & Hosting**: GitHub Actions workflow builds the Site Generator output and deploys to GitHub Pages under the custom domain
 
 ### Risk Assessment
+
 - **Risk Level**: Low — static site, no backend, no user data, no authentication; rollback is a simple Git revert
 - **Rollback Complexity**: Easy
 - **Testing Complexity**: Simple — mostly build verification, link/render checks, and a small set of pure-function tests (front-matter parsing)
@@ -116,6 +120,7 @@ OPERATIONS PHASE
 ## Phases to Execute
 
 ### INCEPTION PHASE
+
 - [x] Workspace Detection (COMPLETED)
 - [x] Requirements Analysis (COMPLETED)
 - [x] User Stories (COMPLETED)
@@ -126,6 +131,7 @@ OPERATIONS PHASE
   - **Rationale**: This is a single, simple unit of work — one static site repository, no independently-deployable services or packages. No decomposition into multiple units adds value.
 
 ### CONSTRUCTION PHASE (single unit: "novels-site")
+
 - [ ] Functional Design — **EXECUTE**
   - **Rationale**: A new data model (front-matter schema for titles/chapters, category taxonomy, status enum, chapter ordering) needs definition, and PBT property identification for the front-matter parsing logic is best captured here.
 - [ ] NFR Requirements — **EXECUTE**
@@ -140,14 +146,17 @@ OPERATIONS PHASE
   - **Rationale**: Build verification, rendering checks, and PBT-scoped unit tests (front-matter parsing round-trip/invariants) needed before considering the site done.
 
 ### OPERATIONS PHASE
+
 - [ ] Operations — **PLACEHOLDER**
   - **Rationale**: Future deployment/monitoring workflow expansion; current build/deploy is fully covered by Infrastructure Design + Build and Test.
 
 ## Estimated Timeline
+
 - **Total Stages Remaining**: 6 (Application Design, Functional Design, NFR Requirements, NFR Design, Infrastructure Design, Code Generation, Build and Test — 7 including Code Gen/Build&Test)
 - **Estimated Duration**: Single incremental session-based build; no fixed calendar timeline (AI-DLC stages are checkpoint-driven, not time-boxed)
 
 ## Success Criteria
+
 - **Primary Goal**: A working, mobile-first static site that publishes Markdown-authored translated novel content, deployable to GitHub Pages under `forgottentranslations.online`, satisfying all approved user stories
 - **Key Deliverables**:
   - Content schema/conventions (front matter for titles and chapters)
