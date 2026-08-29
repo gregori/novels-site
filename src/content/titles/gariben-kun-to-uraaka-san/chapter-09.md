@@ -1,5 +1,5 @@
 ---
-chapterTitle: "Chapter 09: The Overwhelming Sense of Wrongness, and Where It Leads"
+chapterTitle: 'Chapter 09: The Overwhelming Sense of Wrongness, and Where It Leads'
 publishDate: 2026-08-23
 volume: 1
 ---

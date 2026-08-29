@@ -215,4 +215,4 @@ Inevitable, complicated, but surely not bad days were about to begin again,* sta
 
 ---
 
-*T/N: I noticed that only the epilogue was missing for this WN, so I gave it a try. It's mostly MTL'd, though I know some japanese, so I do a few interventions here and there.*
+_T/N: I noticed that only the epilogue was missing for this WN, so I gave it a try. It's mostly MTL'd, though I know some japanese, so I do a few interventions here and there._
